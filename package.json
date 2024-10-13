@@ -1,0 +1,20 @@
+{
+  "name": "workouttrack",
+  "version": "1.0.0",
+  "description": "Workout tracking application",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"npm run start --prefix workout-log\" \"npm run start --prefix workout-backend\"",
+    "client": "npm start --prefix workout-log",
+    "server": "npm start --prefix workout-backend",
+    "install-all": "npm install && cd workout-log && npm install && cd ../backend && npm install"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.6.0",
+    "@fortawesome/free-solid-svg-icons": "^6.6.0",
+    "@fortawesome/react-fontawesome": "^0.2.2"
+  }
+}
