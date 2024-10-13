@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-// Workout Schema for storing user's lifts data
+// Workout Schema for storing user's lifts and workout schedule
 const WorkoutSchema = new mongoose.Schema({
   userId: {
     type: String,
@@ -33,6 +33,14 @@ const WorkoutSchema = new mongoose.Schema({
               percentage: String,
             },
           ],
+          accessories: [
+            {
+              accessory: String,
+              sets: [
+                { weight: Number, reps: Number },
+              ],
+            },
+          ],
         },
       ],
     },
@@ -42,7 +50,5 @@ const WorkoutSchema = new mongoose.Schema({
     default: Date.now,
   },
 });
-
-
 
 module.exports = mongoose.model('Workout', WorkoutSchema);
